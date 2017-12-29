@@ -1,14 +1,16 @@
 import org.testng.annotations.Test;
 
-import java.util.Queue;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
 public class StringCalculatorTest {
+    private StringCalculator createStringCalculator() {
+        return new StringCalculator();
+    }
+
     @Test
     public void shouldReturnZeroOnEmptyString() {
-        StringCalculator calculator = new StringCalculator();
+        StringCalculator calculator = createStringCalculator();
 
         int result = calculator.add("");
 
@@ -17,10 +19,10 @@ public class StringCalculatorTest {
 
     @Test
     public void shouldReturnOneNumber() {
-        StringCalculator calculator = new StringCalculator();
+        StringCalculator calculator = createStringCalculator();
 
         int result = calculator.add("3");
-        
+
         assertThat(result, is(3));
     }
 }
