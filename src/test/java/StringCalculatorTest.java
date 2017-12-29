@@ -25,4 +25,13 @@ public class StringCalculatorTest {
 
         assertThat(result, is(3));
     }
+
+    @Test
+    public void shouldAddTwoNumbers() {
+        StringCalculator calculator = createStringCalculator();
+
+        int result = calculator.add("3,2");
+
+        assertThat(result, is(3 + 2));
+    }
 }
