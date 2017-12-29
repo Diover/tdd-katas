@@ -36,11 +36,20 @@ public class StringCalculatorTest {
     }
     @Test
     public void shouldAddAlotOfNubmers() {
-
-
         StringCalculator calculator= createStringCalculator();
+
         int result=calculator.add("3,4,8");
+
         assertThat(result,is(3+4+8));
 
+    }
+
+    @Test
+    public void shouldNewAnyDelimetrs() {
+        StringCalculator calculator = createStringCalculator();
+
+        int result = calculator.add("3\n6,9");
+
+        assertThat(result, is(3 + 6 + 9));
     }
 }
