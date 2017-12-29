@@ -34,4 +34,13 @@ public class StringCalculatorTest {
 
         assertThat(result, is(3 + 2));
     }
+    @Test
+    public void shouldAddAlotOfNubmers() {
+
+
+        StringCalculator calculator= createStringCalculator();
+        int result=calculator.add("3,4,8");
+        assertThat(result,is(3+4+8));
+
+    }
 }
